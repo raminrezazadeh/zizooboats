@@ -1,7 +1,9 @@
 <?php
 namespace App\Types;
 
-abstract class BasicEnum {
+use ReflectionClass;
+
+class BasicEnum {
     private static $constCacheArray = NULL;
 
     private static function getConstants() {
