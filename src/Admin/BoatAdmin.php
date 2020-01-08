@@ -19,9 +19,9 @@ final class BoatAdmin extends AbstractAdmin
             ->add('length', IntegerType::class)
             ->add('color', ChoiceType::class, array(
                 'choices' => array(
-                    ColorsEnum::Blue => true,
-                    ColorsEnum::Green => false,
-                    ColorsEnum::Red => false,
+                    ColorsEnum::Blue => ColorsEnum::Blue,
+                    ColorsEnum::Green => ColorsEnum::Green,
+                    ColorsEnum::Red => ColorsEnum::Red,
                 ),
                 'attr' => array('class' => 'dropdown')
 
