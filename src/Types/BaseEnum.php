@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Types;
 
 use ReflectionClass;
