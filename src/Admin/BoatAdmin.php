@@ -1,14 +1,13 @@
 <?php
 namespace App\Admin;
 
-use App\Types\ColorsEnum;
+use App\Form\Type\CustomColorPickerType;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 final class BoatAdmin extends AbstractAdmin
 {
@@ -17,15 +16,9 @@ final class BoatAdmin extends AbstractAdmin
         $formMapper
             ->add('name', TextType::class)
             ->add('length', IntegerType::class)
-            ->add('color', ChoiceType::class, array(
-                'choices' => array(
-                    ColorsEnum::Blue => ColorsEnum::Blue,
-                    ColorsEnum::Green => ColorsEnum::Green,
-                    ColorsEnum::Red => ColorsEnum::Red,
-                ),
-                'attr' => array('class' => 'dropdown')
-
-            ))
+            ->add('color', CustomColorPickerType::class, [
+                'placeholder' => 'Choose a color',
+            ])
             ->add('year', IntegerType::class);
     }
 
