@@ -32,4 +32,15 @@ php bin/console server:run
 
 Open your browser and go to [Admin](http://127.0.0.1:8000/admin "127.0.0.1:8000/admin")
 
+http://127.0.0.1:8000/admin
+
+## Login credentional
+* Username: admin
+* Password: admin
+
+
+## Requirments
+* PHP 7
+* Mysql 5.7
+* Composer
 
