@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-// use App\Types\ColorsEnum;
+use App\Types\ColorsEnum;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -85,9 +85,9 @@ class Boat
 
     public function setColor(string $color): self
     {
-        // if(!ColorsEnum::isValidValue($color)) {
-            // throw new \InvalidArgumentException("Invalid type");
-        // }
+        if(!ColorsEnum::isValidValue($color)) {
+            throw new \InvalidArgumentException("Invalid type");
+        }
         $this->color = $color;
 
         return $this;
